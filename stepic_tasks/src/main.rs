@@ -1,6 +1,14 @@
 fn main() {
-    let (first, second) = get_first_and_second();
-    println!("{first} {second}");
+    println!("{}", read_num()[0])
+}
+
+fn read_num() -> Vec<i32> {
+    let mut str = String::new();
+    std::io::stdin()
+        .read_line(&mut str)
+        .unwrap();
+    str.trim().split(" ")
+        .map(|a| a.parse::<i32>().unwrap()).collect()
 }
 
 
